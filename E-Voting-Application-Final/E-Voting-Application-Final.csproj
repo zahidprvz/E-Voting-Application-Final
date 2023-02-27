@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ABA5DFA1-388B-498B-9EE4-EEF6FE9BAF15}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>E_Voting_Application_Final</RootNamespace>
+    <AssemblyName>E-Voting-Application-Final</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AdminControlsFormController.cs" />
+    <Compile Include="Controllers\Admin_LoginFormController.cs" />
+    <Compile Include="Models\AdminControlsFormModel.cs" />
+    <Compile Include="Models\Admin_LoginFormModel.cs" />
+    <Compile Include="Views\AddNewCandidateFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddNewCandidateFormView.Designer.cs">
+      <DependentUpon>AddNewCandidateFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin_Controls_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin_Controls_Form.Designer.cs">
+      <DependentUpon>Admin_Controls_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ElectionResultPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ElectionResultPage.Designer.cs">
+      <DependentUpon>ElectionResultPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResultForm_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ResultForm_View.Designer.cs">
+      <DependentUpon>ResultForm_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Admin-LoginFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin-LoginFormView.Designer.cs">
+      <DependentUpon>Admin-LoginFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Voter-LoginFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Voter-LoginFormView.Designer.cs">
+      <DependentUpon>Voter-LoginFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Voter-RegistrationFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Voter-RegistrationFormView.Designer.cs">
+      <DependentUpon>Voter-RegistrationFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZahidDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZahidDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\AddNewCandidateFormView.resx">
+      <DependentUpon>AddNewCandidateFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin_Controls_Form.resx">
+      <DependentUpon>Admin_Controls_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ElectionResultPage.resx">
+      <DependentUpon>ElectionResultPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ResultForm_View.resx">
+      <DependentUpon>ResultForm_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\Admin-LoginFormView.resx">
+      <DependentUpon>Admin-LoginFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Voter-LoginFormView.resx">
+      <DependentUpon>Voter-LoginFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Voter-RegistrationFormView.resx">
+      <DependentUpon>Voter-RegistrationFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ZahidDBDataSet.xsc">
+      <DependentUpon>ZahidDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ZahidDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZahidDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZahidDBDataSet.xss">
+      <DependentUpon>ZahidDBDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Pakistan-Election-Commission-Logo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
