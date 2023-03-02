@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbxShowP = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +72,7 @@
             this.loginBtn.TabIndex = 19;
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // tbxPassword
             // 
@@ -98,7 +100,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(412, 290);
+            this.label1.Location = new System.Drawing.Point(421, 290);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 20);
             this.label1.TabIndex = 15;
@@ -108,11 +110,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(456, 9);
+            this.label4.Location = new System.Drawing.Point(493, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(363, 25);
+            this.label4.Size = new System.Drawing.Size(289, 25);
             this.label4.TabIndex = 33;
-            this.label4.Text = "Welcome to Voter CRUD Application";
+            this.label4.Text = "Welcome to PEC Application";
             // 
             // pictureBox1
             // 
@@ -124,11 +126,23 @@
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
+            // cbxShowP
+            // 
+            this.cbxShowP.AutoSize = true;
+            this.cbxShowP.Location = new System.Drawing.Point(793, 351);
+            this.cbxShowP.Name = "cbxShowP";
+            this.cbxShowP.Size = new System.Drawing.Size(72, 24);
+            this.cbxShowP.TabIndex = 35;
+            this.cbxShowP.Text = "show";
+            this.cbxShowP.UseVisualStyleBackColor = true;
+            this.cbxShowP.CheckedChanged += new System.EventHandler(this.cbxShowP_CheckedChanged);
+            // 
             // Voter_LoginFormView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1274, 740);
+            this.Controls.Add(this.cbxShowP);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
@@ -144,6 +158,7 @@
             this.Name = "Voter_LoginFormView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Voter_LoginFormView";
+            this.Load += new System.EventHandler(this.Voter_LoginFormView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,5 +176,6 @@
         private System.Windows.Forms.TextBox tbxEmail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox cbxShowP;
     }
 }

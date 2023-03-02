@@ -63,6 +63,16 @@ namespace E_Voting_Application_Final.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye_icon {
+            get {
+                object obj = ResourceManager.GetObject("eye-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pakistan_Election_Commission_Logo {
             get {
                 object obj = ResourceManager.GetObject("Pakistan-Election-Commission-Logo", resourceCulture);

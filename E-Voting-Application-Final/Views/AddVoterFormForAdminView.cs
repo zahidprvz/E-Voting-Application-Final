@@ -5,36 +5,41 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Text.RegularExpressions;
+using E_Voting_Application_Final.Models;
 
 namespace E_Voting_Application_Final.Views
 {
-    public partial class Voter_RegistrationFormView : Form
+    
+    public partial class AddVoterFormForAdminView : Form
     {
-        public Voter_RegistrationFormView()
+        
+
+        public AddVoterFormForAdminView()
         {
             InitializeComponent();
+            
         }
 
-        private void loginformLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnGetAllVoters_Click(object sender, EventArgs e)
         {
-            //It will redirect to Voter_Login Form/Panel
-            Voter_LoginFormView v_login_form = new Voter_LoginFormView();
-            v_login_form.ShowDialog();
-
+            AllVotersListFormView allVotersListFormView = new AllVotersListFormView();
+            allVotersListFormView.ShowDialog(this);
         }
 
         private void btnAddVoter_Click(object sender, EventArgs e)
         {
+
             string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
             if (Regex.IsMatch(txtEmail.Text, emailPattern))
             {
                 if (checkBox1.Checked && txtId.Text != "" && txtName.Text != "" && txtAge.Text != "" && txtAddress.Text != "" && txtCity.Text != "" && txtDob.Text != "" && txtReligion.Text != "" && txtGender.Text != "" && txtMaritalStatus.Text != "" && txtNationality.Text != "" && txtCountry.Text != "" && txtPhone.Text != "" && txtEmail.Text != "" && txtJobStatus.Text != "" && tbxCNIC.Text != "")
-
                 {
                     int Id = int.Parse(txtId.Text);
                     string Name = txtName.Text;
@@ -52,9 +57,13 @@ namespace E_Voting_Application_Final.Views
                     string jobStatus = txtJobStatus.Text;
                     string CNIC = tbxCNIC.Text;
 
+
+
                     //Method to insert Voter into database in Model through Controller
-                    AddVoterFormController addVoterFormController = new AddVoterFormController();
-                    addVoterFormController.addVoterController(Id, Name, Age, Address, City, DOB, Religion, Gender, MaritalStatus, Nationality, Country, phoneNumber, Email, jobStatus, CNIC);
+                    ManageVoterByAdminController manageVoterByAdminController = new ManageVoterByAdminController();
+                    manageVoterByAdminController.addVoterByAdminController(Id, Name, Age, Address, City, DOB, Religion, Gender, MaritalStatus, Nationality, Country, phoneNumber, Email, jobStatus, CNIC);
+
+                    
 
                     txtId.Clear();
                     txtId.Focus();
@@ -72,6 +81,8 @@ namespace E_Voting_Application_Final.Views
                     txtEmail.Clear();
                     txtJobStatus.Clear();
                     tbxCNIC.Clear();
+
+
                 }
                 else
                 {
@@ -81,15 +92,95 @@ namespace E_Voting_Application_Final.Views
             else
             {
                 MessageBox.Show("Invalid email address");
-                txtEmail.Focus();
             }
 
+
+            
             progressBar1.Value = 0;
+        }
+
+        private void btnDeleteVoter_Click(object sender, EventArgs e)
+        {
+            
+            if (txtId.Text != "")
+            {
+                int Id = int.Parse(txtId.Text);
+                //Method to delete voter from database
+                ManageVoterByAdminController manageVoterByAdminController = new ManageVoterByAdminController();
+                manageVoterByAdminController.deleteVoterByAdminController(Id);
+                progressBar1.Value = 0;
+            }
+            else
+            {
+                MessageBox.Show("Please, enter a valid ID to delete!");
+            }
         }
 
         private void txtEmail_MouseClick(object sender, MouseEventArgs e)
         {
             txtEmail.Clear();
+        }
+
+        private void btnGetVoterById_Click(object sender, EventArgs e)
+        {
+            if(txtId.Text != "")
+            {
+                int Id = int.Parse(txtId.Text);
+                //Method to search a specific voter from database
+                ManageVoterByAdminController manageVoterByAdminController = new ManageVoterByAdminController();
+                manageVoterByAdminController.searchVoterByAdminController(Id);
+
+
+                ManageVoterByAdminModel manageVoterByAdminModel = new ManageVoterByAdminModel();
+                manageVoterByAdminModel.searchVoterAdminModel(Id);
+
+
+                if (manageVoterByAdminModel.errorString == null)
+                {
+                    txtId.Text = manageVoterByAdminModel.Id.ToString();
+                    txtName.Text = manageVoterByAdminModel.Name.ToString();
+                    txtAge.Text = manageVoterByAdminModel.Age.ToString();
+                    txtAddress.Text = manageVoterByAdminModel.Address.ToString();
+                    txtCity.Text = manageVoterByAdminModel.City.ToString();
+                    txtDob.Text = manageVoterByAdminModel.DOB.ToString();
+                    txtReligion.Text = manageVoterByAdminModel.Religion.ToString();
+                    txtGender.Text = manageVoterByAdminModel.Gender.ToString();
+                    txtMaritalStatus.Text = manageVoterByAdminModel.MaritalStatus.ToString();
+                    txtNationality.Text = manageVoterByAdminModel.Nationality.ToString();
+                    txtCountry.Text = manageVoterByAdminModel.Country.ToString();
+                    txtEmail.Text = manageVoterByAdminModel.Email.ToString();
+                    txtPhone.Text = manageVoterByAdminModel.phoneNumber.ToString();
+                    txtJobStatus.Text = manageVoterByAdminModel.jobStatus.ToString();
+                    tbxCNIC.Text = manageVoterByAdminModel.CNIC.ToString();
+                }
+                else
+                {
+                    MessageBox.Show(manageVoterByAdminModel.errorString);
+
+                    txtId.Focus();
+                    txtName.Clear();
+                    txtAge.Clear();
+                    txtAddress.Clear();
+                    txtCity.Clear();
+                    txtDob.Clear();
+                    txtReligion.Clear();
+                    txtGender.Clear();
+                    txtMaritalStatus.Clear();
+                    txtNationality.Clear();
+                    txtCountry.Clear();
+                    txtPhone.Clear();
+                    txtEmail.Clear();
+                    txtJobStatus.Clear();
+                    tbxCNIC.Clear();
+
+                }
+
+                progressBar1.Value = 0;
+            }
+            else
+            {
+                MessageBox.Show("Enter a valid ID to search!");
+            }
         }
 
         private void txtJobStatus_MouseClick(object sender, MouseEventArgs e)
@@ -300,8 +391,6 @@ namespace E_Voting_Application_Final.Views
                 // Set the textbox's Tag property to indicate it has been clicked before
                 txtJobStatus.Tag = "clicked";
             }
-
-
         }
 
         private void txtMaritalStatus_Leave(object sender, EventArgs e)
@@ -318,7 +407,7 @@ namespace E_Voting_Application_Final.Views
             }
         }
 
-        private void Voter_RegistrationFormView_Load(object sender, EventArgs e)
+        private void AddVoterFormForAdminView_Load(object sender, EventArgs e)
         {
             progressBar1.Value = 0;
         }

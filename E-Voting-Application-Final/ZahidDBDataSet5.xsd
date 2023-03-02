@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ZahidDBDataSet5" targetNamespace="http://tempuri.org/ZahidDBDataSet5.xsd" xmlns:mstns="http://tempuri.org/ZahidDBDataSet5.xsd" xmlns="http://tempuri.org/ZahidDBDataSet5.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ZahidDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ZahidDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.E_Voting_Application_Final.Properties.Settings.GlobalReference.Default.ZahidDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ElectionListTableAdapter" GeneratorDataComponentClassName="ElectionListTableAdapter" Name="ElectionList" UserDataComponentName="ElectionListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ZahidDBConnectionString (Settings)" DbObjectName="ZahidDB.dbo.ElectionList" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ElectionId FROM dbo.ElectionList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ElectionId" DataSetColumn="ElectionId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ZahidDBDataSet5" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="ZahidDBDataSet5" msprop:Generator_DataSetName="ZahidDBDataSet5">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ElectionList" msprop:Generator_RowEvHandlerName="ElectionListRowChangeEventHandler" msprop:Generator_RowDeletedName="ElectionListRowDeleted" msprop:Generator_RowDeletingName="ElectionListRowDeleting" msprop:Generator_RowEvArgName="ElectionListRowChangeEvent" msprop:Generator_TablePropName="ElectionList" msprop:Generator_RowChangedName="ElectionListRowChanged" msprop:Generator_RowChangingName="ElectionListRowChanging" msprop:Generator_TableClassName="ElectionListDataTable" msprop:Generator_RowClassName="ElectionListRow" msprop:Generator_TableVarName="tableElectionList" msprop:Generator_UserTableName="ElectionList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ElectionId" msprop:Generator_ColumnPropNameInRow="ElectionId" msprop:Generator_ColumnPropNameInTable="ElectionIdColumn" msprop:Generator_ColumnVarNameInTable="columnElectionId" msprop:Generator_UserColumnName="ElectionId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

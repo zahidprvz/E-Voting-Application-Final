@@ -1,29 +1,23 @@
 ﻿using E_Voting_Application_Final.Views;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
+using System.Data;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace E_Voting_Application_Final.Models
 {
-
-    internal class Admin_LoginFormModel
+    internal class VoterLoginFormModel
     {
         SqlConnection con = new SqlConnection("Data Source=ZAHIDPARVIZ;Initial Catalog=ZahidDB;User ID=sa;Password=abc123");
+
         
-        
-        
+
         public void OnLoginButtonClicked(string Email, string Password)
         {
-            
-
             string email = Email;
             string password = Password;
 
@@ -36,7 +30,7 @@ namespace E_Voting_Application_Final.Models
             {
                 try
                 {
-                    String cmd2 = "select * from Admin where AdminEmail = '" + email + "' and AdminPassword = '" + password + "' ";
+                    String cmd2 = "select * from VoterTableFinal where Email = '" + email + "' and Password = '" + password + "' ";
                     SqlDataAdapter sda = new SqlDataAdapter(cmd2, con);
 
                     DataTable dtable = new DataTable();
@@ -47,8 +41,8 @@ namespace E_Voting_Application_Final.Models
                         Email = email;
                         Password = password;
 
-                        Admin_Controls_Form admin_Controls_Form= new Admin_Controls_Form();
-                        admin_Controls_Form.ShowDialog();
+                        VoterAfterLoginView voterAfterLoginView = new VoterAfterLoginView();
+                        voterAfterLoginView.ShowDialog();
 
 
 
@@ -58,15 +52,16 @@ namespace E_Voting_Application_Final.Models
                         MessageBox.Show("Oops, Check Your Email/Password again...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
-                finally 
-                { 
+                finally
+                {
                     con.Close();
                 }
             }
         }
     }
 }
+

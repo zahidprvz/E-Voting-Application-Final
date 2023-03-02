@@ -49,21 +49,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AddNewCandidateController.cs" />
+    <Compile Include="Controllers\AddVoterFormController.cs" />
+    <Compile Include="Controllers\ManageVoterByAdminController.cs" />
     <Compile Include="Controllers\AdminControlsFormController.cs" />
     <Compile Include="Controllers\Admin_LoginFormController.cs" />
+    <Compile Include="Controllers\VoterLoginFormController.cs" />
+    <Compile Include="Models\AddNewCandidateModel.cs" />
+    <Compile Include="Models\AddVoterFormModel.cs" />
+    <Compile Include="Models\ManageVoterByAdminModel.cs" />
     <Compile Include="Models\AdminControlsFormModel.cs" />
     <Compile Include="Models\Admin_LoginFormModel.cs" />
+    <Compile Include="Models\VoterLoginFormModel.cs" />
     <Compile Include="Views\AddNewCandidateFormView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\AddNewCandidateFormView.Designer.cs">
       <DependentUpon>AddNewCandidateFormView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddVoterFormForAdminView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddVoterFormForAdminView.Designer.cs">
+      <DependentUpon>AddVoterFormForAdminView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin_Controls_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Admin_Controls_Form.Designer.cs">
       <DependentUpon>Admin_Controls_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllCandidateListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AllCandidateListForm.Designer.cs">
+      <DependentUpon>AllCandidateListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllVotersListFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AllVotersListFormView.Designer.cs">
+      <DependentUpon>AllVotersListFormView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ElectionResultPage.cs">
       <SubType>Form</SubType>
@@ -76,6 +102,12 @@
     </Compile>
     <Compile Include="Views\ResultForm_View.Designer.cs">
       <DependentUpon>ResultForm_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VoterAfterLoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VoterAfterLoginView.Designer.cs">
+      <DependentUpon>VoterAfterLoginView.cs</DependentUpon>
     </Compile>
     <Compile Include="WelcomeForm.cs">
       <SubType>Form</SubType>
@@ -108,17 +140,54 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ZahidDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ZahidDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZahidDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZahidDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZahidDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZahidDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZahidDBDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZahidDBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZahidDBDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZahidDBDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZahidDBDataSet5.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\AddNewCandidateFormView.resx">
       <DependentUpon>AddNewCandidateFormView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddVoterFormForAdminView.resx">
+      <DependentUpon>AddVoterFormForAdminView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Admin_Controls_Form.resx">
       <DependentUpon>Admin_Controls_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AllCandidateListForm.resx">
+      <DependentUpon>AllCandidateListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AllVotersListFormView.resx">
+      <DependentUpon>AllVotersListFormView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ElectionResultPage.resx">
       <DependentUpon>ElectionResultPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ResultForm_View.resx">
       <DependentUpon>ResultForm_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VoterAfterLoginView.resx">
+      <DependentUpon>VoterAfterLoginView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
@@ -142,6 +211,9 @@
     <EmbeddedResource Include="Views\Voter-RegistrationFormView.resx">
       <DependentUpon>Voter-RegistrationFormView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -163,11 +235,68 @@
     <None Include="ZahidDBDataSet.xss">
       <DependentUpon>ZahidDBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="ZahidDBDataSet1.xsc">
+      <DependentUpon>ZahidDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ZahidDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZahidDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZahidDBDataSet1.xss">
+      <DependentUpon>ZahidDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ZahidDBDataSet2.xsc">
+      <DependentUpon>ZahidDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ZahidDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZahidDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZahidDBDataSet2.xss">
+      <DependentUpon>ZahidDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ZahidDBDataSet3.xsc">
+      <DependentUpon>ZahidDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ZahidDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZahidDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZahidDBDataSet3.xss">
+      <DependentUpon>ZahidDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ZahidDBDataSet4.xsc">
+      <DependentUpon>ZahidDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ZahidDBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZahidDBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZahidDBDataSet4.xss">
+      <DependentUpon>ZahidDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ZahidDBDataSet5.xsc">
+      <DependentUpon>ZahidDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ZahidDBDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZahidDBDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZahidDBDataSet5.xss">
+      <DependentUpon>ZahidDBDataSet5.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\eye-icon.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Pakistan-Election-Commission-Logo.png" />
   </ItemGroup>

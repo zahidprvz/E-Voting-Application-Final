@@ -33,6 +33,25 @@ namespace E_Voting_Application_Final.Views
             
             //Login method in Controller
             a_loginformcontroller.loginMethodController(email, password);
+
+            tbxPassword.Text = "";
+        }
+
+        private void Admin_LoginFormView_Load(object sender, EventArgs e)
+        {
+            tbxPassword.UseSystemPasswordChar = true;
+        }
+
+        private void cbxShowP_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxShowP.Checked == true)
+            {
+                tbxPassword.UseSystemPasswordChar = false;
+            }
+            if (cbxShowP.Checked == false)
+            {
+                tbxPassword.UseSystemPasswordChar = true;
+            }
         }
     }
 }
