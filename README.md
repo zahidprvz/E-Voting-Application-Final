@@ -40,7 +40,7 @@ E-Voting is a Windows Desktop based application developed in C# .NET that facili
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/zpmughal/E-Voting-Application-Final.git
+   git clone https://github.com/zahiparviz/E-Voting-Application-Final.git
    ```
 
 2. **Set Up Database**:
